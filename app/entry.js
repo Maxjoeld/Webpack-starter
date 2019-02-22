@@ -1,7 +1,7 @@
 let React = require('react');
 let ReactDOM = require("react-dom");
 import { Link, Route } from 'react-router-dom';
-import App from "./App";
+import App from "./app";
 // require("./index.css"); // the style loader lets us use style for this page
 //
 import "./styles/styles.scss";
