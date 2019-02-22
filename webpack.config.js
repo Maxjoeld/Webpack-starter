@@ -19,7 +19,16 @@ module.exports = {
 				// style-loader takes css being reuired and applied the styles directly to that page
 				{ test: /\.(js)$/, use: 'babel-loader'},
 				{ test: /\.s?css$/, 
-					use: ['style-loader', 'css-loader', "sass-loader"]}
+					use: ['style-loader', 'css-loader', "sass-loader"]},
+				{ test: /\.(jpg|png|gif|svg|pdf|ico)$/,
+					use: [
+						{
+							loader: 'file-loader',
+							options: {
+							},
+						},
+					]
+				},
 			]
 		},
 		mode: 'development',
