@@ -1,6 +1,6 @@
 let path = require('path');
+const { join, resolve } = require("path");
 let HtmlWebpackPlugin = require('html-webpack-plugin');
-
 // @babel/preset-env", want to be able to support older browsers
 // so babel would be responsible to transfrom es classes to old es5 syntax
 // "@babel/preset-react" // transfroms jsx into normal javascript
@@ -25,7 +25,7 @@ module.exports = {
 		mode: 'development',
 		plugins: [
 			new HtmlWebpackPlugin({
-				template: 'app/index.html',
+				template: resolve(__dirname, 'app/index.html')
 			})
 		]
 };

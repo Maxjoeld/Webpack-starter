@@ -6,7 +6,7 @@ class App extends Component {
   render() { 
     return ( 
       <div className="page">
-        Heyy mann
+        Heyy masee
 				<div>
 				<Link to="/im">Click here</Link>
 				</div>
