@@ -14,7 +14,7 @@ class Home extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={idx} />
-          <Route path="/im" component={ex} />
+          <Route path="/result" component={ex} />
         </Switch>
       </Router>
     );

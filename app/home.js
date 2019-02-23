@@ -10,7 +10,7 @@ class App extends Component {
         Heyy mafee
 				<div>
 					{/* <img src={bg} alt="hey" /> */}
-				<Link to="/im">Click here</Link>
+				<Link to="/result">Click here</Link>
 				</div>
       </div>
     );
