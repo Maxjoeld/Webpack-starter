@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch
-} from "react-router-dom";
-import idx from "./home.js";
-import ex from './ex.js';
+// import {
+//     BrowserRouter as Router,
+//     Route,
+//     Switch
+// } from "react-router-dom";
+// import idx from "./home.js";
+// import ex from './ex.js';
 
-class Home extends Component {
+class Main extends Component {
     // state = {}
   render() {
     return (
@@ -24,4 +24,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Main;
