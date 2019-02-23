@@ -3,6 +3,7 @@ WORKDIR '/app'
 COPY package.json .
 RUN npm install
 COPY . .
+RUN npm install webpack -g
 RUN npm run create
 #nginx starts by default-localhost: 80 is default for nginx
 FROM nginx
