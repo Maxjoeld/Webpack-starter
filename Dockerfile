@@ -1,11 +1,10 @@
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY package.json .
+COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm install webpack -g
-RUN webpack
+RUN npm run build
 #nginx starts by default-localhost: 80 is default for nginx
 FROM nginx
 EXPOSE 80
-COPY --from=builder app/dist /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
