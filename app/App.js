@@ -11,12 +11,15 @@ class Home extends Component {
     // state = {}
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/" component={idx} />
-          <Route path="/result" component={ex} />
-        </Switch>
-      </Router>
+      <div className="page">
+        Heyy mafee
+				</div>
+      // <Router>
+      //   <Switch>
+      //     <Route exact path="/" component={idx} />
+      //     <Route path="/im" component={ex} />
+      //   </Switch>
+      // </Router>
     );
   }
 }

@@ -6,35 +6,40 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 // "@babel/preset-react" // transfroms jsx into normal javascript
 
 module.exports = {
-    entry: './app/entry.js',
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'index_bundle.js'
-		},
-		module: {
-			rules: [
-				// run the babel loader on any js file that is in our application
-				// the reg expression searches for all js files 
-				// cs loader changes <href url(./backrdoung.jpg) to require ('image')
-				// style-loader takes css being reuired and applied the styles directly to that page
-				{ test: /\.(js)$/, use: 'babel-loader'},
-				{ test: /\.s?css$/, 
-					use: ['style-loader', 'css-loader', "sass-loader"]},
-				{ test: /\.(jpg|png|gif|svg|pdf|ico)$/,
-					use: [
-						{
-							loader: 'file-loader',
-							options: {
-							},
-						},
-					]
-				},
-			]
-		},
-		mode: 'development',
-		plugins: [
-			new HtmlWebpackPlugin({
-				template: resolve(__dirname, 'app/index.html')
-			})
-		]
+	entry: "./app/entry.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "index_bundle.js"
+  },
+  module: {
+    rules: [
+      // run the babel loader on any js file that is in our application
+      // the reg expression searches for all js files
+      // cs loader changes <href url(./backrdoung.jpg) to require ('image')
+      // style-loader takes css being reuired and applied the styles directly to that page
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      { test: /\.s?css$/, use: ["style-loader", "css-loader", "sass-loader"] },
+      // {
+      //   test: /\.(jpg|png|gif|svg|pdf|ico)$/,
+      //   use: [
+      //     {
+      //       loader: "file-loader",
+      //       options: {}
+      //     }
+      //   ]
+      // }
+    ]
+  },
+  mode: "development",
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: resolve(__dirname, "app/index.html")
+    })
+  ]
 };

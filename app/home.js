@@ -9,8 +9,7 @@ class App extends Component {
       <div className="page">
         Heyy mafee
 				<div>
-					{/* <img src={bg} alt="hey" /> */}
-				<Link to="/result">Click here</Link>
+				<Link to="/im">Click here</Link>
 				</div>
       </div>
     );
