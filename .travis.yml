@@ -3,8 +3,8 @@ services:
   -docker
 
 before_install:
-  - docker build -t leojj/Webpack-starter -f Dockerfile.dev .
+  - docker build -t leojj/webpack-starter -f Dockerfile.dev .
 
 script:
-  - docker run leojj/Webpack-starter npm run onetest
+  - docker run leojj/webpack-starter npm run onetest
   
