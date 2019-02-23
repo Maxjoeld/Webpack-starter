@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1550923716036" clover="3.2.0">
+  <project timestamp="1550923716036" name="All files">
+    <metrics statements="6" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0" elements="9" coveredelements="0" complexity="0" loc="6" ncloc="6" packages="1" files="4" classes="4"/>
+    <file name="app.js" path="/Users/joeldelarosa/Documents/coding/dockerprac/webpackApp/app/app.js">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="13" count="0" type="stmt"/>
+    </file>
+    <file name="entry.js" path="/Users/joeldelarosa/Documents/coding/dockerprac/webpackApp/app/entry.js">
+      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="1" count="0" type="stmt"/>
+      <line num="2" count="0" type="stmt"/>
+      <line num="12" count="0" type="stmt"/>
+    </file>
+    <file name="ex.js" path="/Users/joeldelarosa/Documents/coding/dockerprac/webpackApp/app/ex.js">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="6" count="0" type="stmt"/>
+    </file>
+    <file name="home.js" path="/Users/joeldelarosa/Documents/coding/dockerprac/webpackApp/app/home.js">
+      <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="8" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
