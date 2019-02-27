@@ -12,7 +12,7 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="page">
           Heyy ssssssssssfdsfdsdfsfds
           </div>
         {/* <img src={img} alt="imghere" /> */}

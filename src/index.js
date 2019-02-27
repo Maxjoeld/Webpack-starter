@@ -7,7 +7,7 @@ import App from './main';
 import rootReducer from './reducers';
 
 
-// require('./sass/main.css');
+import "./styles/styles.scss";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
