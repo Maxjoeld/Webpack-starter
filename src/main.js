@@ -5,15 +5,18 @@ import React, { Component } from 'react';
 //     Switch
 // } from "react-router-dom";
 // import idx from "./home.js";
-// import ex from './ex.js';
+// import img from '../img/screen1.png';
 
 class Main extends Component {
     // state = {}
   render() {
     return (
-      <div className="page">
-        Heyy mafee
-				</div>
+      <div>
+        <div>
+          Heyy ssssssssssfdsfdsdfsfds
+          </div>
+        {/* <img src={img} alt="imghere" /> */}
+      </div>
       // <Router>
       //   <Switch>
       //     <Route exact path="/" component={idx} />

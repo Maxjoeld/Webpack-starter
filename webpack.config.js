@@ -6,7 +6,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 // "@babel/preset-react" // transfroms jsx into normal javascript
 
 module.exports = {
-	entry: "./app/entry.js",
+	entry: "./src/entry.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index_bundle.js"
@@ -24,22 +24,25 @@ module.exports = {
           loader: "babel-loader"
         }
       },
+      // { test: /\.(js)$/, use: 'babel-loader' },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            }
+          }
+        ]
+      },
       { test: /\.s?css$/, use: ["style-loader", "css-loader", "sass-loader"] },
-      // {
-      //   test: /\.(jpg|png|gif|svg|pdf|ico)$/,
-      //   use: [
-      //     {
-      //       loader: "file-loader",
-      //       options: {}
-      //     }
-      //   ]
-      // }
     ]
   },
   mode: "development",
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, "app/index.html")
+      template: resolve(__dirname, "src/index.html")
     })
   ]
 };

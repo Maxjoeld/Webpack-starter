@@ -4,7 +4,7 @@ class Ex extends Component {
     // state = {  }
   render() { 
     return ( 
-      <div>Good job</div>
+      <div>Good jb</div>
     );
   }
 }
