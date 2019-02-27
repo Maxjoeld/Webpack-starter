@@ -11,6 +11,9 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "index_bundle.js"
   },
+  devServer: {
+    historyApiFallback: true
+  },
   module: {
     rules: [
       // run the babel loader on any js file that is in our application
