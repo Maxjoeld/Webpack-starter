@@ -25,15 +25,15 @@ after_success:
   - docker push leojj/notey-nginx
   - docker push leojj/notey-server
 
-# deploy:
-#   provider: elasticbeanstalk
-#   region: "us-east-2"
-#   app: multi-docker 
-#   env: MultiDocker-env 
-#   bucket_name: "elasticbeanstalk-us-east-2-883721368665"
-#   bucket_path: multi-docker
-#   on:
-#     branch: master
-#   access_key_id: $AWS_ACCESS_KEY
-#   secret_access_key:
-#     secure: $AWS_SECRET_KEY
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: multi-docker 
+  env: MultiDocker-env 
+  bucket_name: "elasticbeanstalk-us-east-2-883721368665"
+  bucket_path: multi-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
