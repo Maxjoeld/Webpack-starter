@@ -12,7 +12,7 @@ before_install:
 
 script:
   #we can add other test here. If they exit with anything other than exit 0, it will quit
-  - docker run leojj/react-test npm test -- --coverage
+  - docker run leojj/react-test npm onetest
 
 after_success:
   - docker build -t leojj/notey-client ./client
