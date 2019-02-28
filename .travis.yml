@@ -10,9 +10,9 @@ before_install:
   # for the image can be found
   - docker build -t leojj/react-test -f ./client/Dockerfile.dev ./client
 
-script:
-  #we can add other test here. If they exit with anything other than exit 0, it will quit
-  - docker run leojj/react-test npm test -- --coverage
+# script:
+#   #we can add other test here. If they exit with anything other than exit 0, it will quit
+#   - docker run leojj/react-test npm test -- --coverage
 
 after_success:
   - docker build -t leojj/notey-client ./client
