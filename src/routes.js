@@ -3,16 +3,16 @@ import { BrowserRouter as Router, Route, Redirect, Switch, Link } from 'react-ro
 import { connect } from 'react-redux';
 
 import Home from './components/Home/Home';
-// import NoteList from './components/Notes/NoteList';
-// import CreateNote from './components/Notes/CreateNote';
-// import ViewNote from './components/Notes/ViewNote';
-// import EditNote from './components/Notes/EditNote';
+import NoteList from './components/Notes/NoteList';
+import CreateNote from './components/Notes/CreateNote';
+import ViewNote from './components/Notes/ViewNote';
+import EditNote from './components/Notes/EditNote';
 
 import Login from './components/Auth/SignIn';
-// import SignUp from './components/Auth/SignUp';
+import SignUp from './components/Auth/SignUp';
 
 // import RequireAuth from './hoc/RequireAuth';
-// import Convo from './components/Chat/Conversation';
+import Convo from './components/Chat/Conversation';
 
 
 import { isAuthenticated } from './actions';
@@ -43,16 +43,16 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/home" component={Home} />
-          {/* <div className="App"> */}
+          <Route path="/home" component={Home} />
+          <div className="App"> 
             <Route path="/login" component={Login} />
-            {/* <Route path="/signup" component={(SignUp)} />
-            <PrivateRoute exact path="/" component={(NoteList)} />
-            <PrivateRoute path="/create" component={(CreateNote)} />
-            <PrivateRoute path="/view" component={(ViewNote)} />
-            <PrivateRoute path="/edit" component={(EditNote)} />
-            <PrivateRoute path="/convo" component={(Convo)} /> */}
-          {/* </div> */}
+            <Route path="/signup" component={(SignUp)} />
+            <Route exact path="/" component={(NoteList)} />
+            <Route path="/create" component={(CreateNote)} />
+            <Route path="/view" component={(ViewNote)} />
+            <Route path="/edit" component={(EditNote)} />
+            <Route path="/convo" component={(Convo)} />  
+          </div> 
         </Switch>
       </Router>
     );
