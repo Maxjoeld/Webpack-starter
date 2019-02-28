@@ -19,7 +19,7 @@ const corsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(session({
-  secret: 'secret',
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: false,
 }));
