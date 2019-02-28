@@ -1,0 +1,39 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  #forst arg is building anc creating name for our build "react-test" can be anything.
+  # second arg- we have to specify the defualt dockerfile to run which is in our client directory
+  #then the last ./client which is usually just a dot, is to reference our current directory
+  #must be ./client to specify the build context-- to show where all of our project files 
+  # for the image can be found
+  - docker build -t leojj/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  #we can add other test here. If they exit with anything other than exit 0, it will quit
+  - docker run leojj/react-test npm test -- --coverage
+
+after_success:
+  - docker build -t leojj/notey-client ./client
+  - docker build -t leojj/notey-nginx ./nginx
+  - docker build -t leojj/notey-server ./server
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push leojj/notey-client
+  - docker push leojj/notey-nginx
+  - docker push leojj/notey-server
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: multi-docker 
+  env: MultiDocker-env 
+  bucket_name: "elasticbeanstalk-us-east-2-883721368665"
+  bucket_path: multi-docker
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
