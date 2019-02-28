@@ -14,6 +14,10 @@ const userCreate = (req, res) => {
 
 const userLogin = (req, res) => {
   const { username, password } = req.body;
+  console.log('madeeeeeeeessssssssitt')
+  console.log('madeeeeeeeessssssssitt')
+  console.log('madeeeeeeeessssssssitt')
+  console.log('madeeeeeeeessssssssitt')
   if (!username || !password) {
     sendUserError('You need to provide a username and password', res);
     return;
@@ -23,10 +27,12 @@ const userLogin = (req, res) => {
       sendUserError({ 'No user found at that id': err }, res);
       return;
     }
-    user
-      .checkPassword(password)
-      .then(response => {
-        if (!response) throw new Error();
+    console.log('eweeweewewewewwe')
+    console.log(user.password)
+    if (user.password !== password) return sendUserError('User does not exist at that id ', res);
+      // .validatePassword(password)
+      // .then(response => {
+        // if (!response) throw new Error();
         req.session.user = user._id;
         res.json({
           success: true,
@@ -34,11 +40,11 @@ const userLogin = (req, res) => {
           user: user.firstName + ' ' + user.lastName,
           userId: user._id
         });
-      })
-      .catch(error => {
-        return sendUserError('User does not exist at that id ', res);
-      });
-  });
+  })
+      // .catch(error => {
+      //   return sendUserError('User does not exist at that id ', res);
+      // });
+  // });
 };
 
 // const userLogin = (req, res) => {

@@ -6,13 +6,23 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 // "@babel/preset-react" // transfroms jsx into normal javascript
 
 module.exports = {
-	entry: "./src/index.js",
+	entry: [
+    'webpack-dev-server/client?http://' + require("os").hostname() + ':3000/',
+    './src/index.js',
+  ],
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index_bundle.js"
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    disableHostCheck: true,
+    host: '0.0.0.0',
+    port: 3000,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    }
   },
   module: {
     rules: [
