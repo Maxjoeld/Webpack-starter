@@ -5,6 +5,7 @@ import { NavLink, Link } from 'react-router-dom';
 import {
 	LazyLoadImage
 } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
 import { withRouter } from 'react-router'
 
 class Home extends Component {
@@ -32,7 +33,7 @@ class Home extends Component {
 						src={home}
 						alt="SideLogo"
 						className="Home--Pic"
-						effect="blur"
+						effect="opacity"
 					/>
 					<div className="Home-type">
 						Create <br />Read <br /> Send <br />

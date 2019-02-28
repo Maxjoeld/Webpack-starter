@@ -6,7 +6,10 @@ import { loginUser, loginGoogle } from '../../actions';
 import logo from './google.png';
 import noteyLogo from './logo.png';
 import backgroundImage from './background.jpg';
-
+import {
+  LazyLoadImage
+} from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
 
 class SignIn extends Component {
   state = {
