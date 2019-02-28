@@ -97,7 +97,7 @@ export const isAuthenticated = () => {
         try {
             // this will check if the route we're talking about is authenticated
             console.log('hey');
-            const res = await axios.get(`/auth/isLogged`);
+            const res = await axios.get(`/notes/auth/isLogged`);
             await sessionStorage.setItem('id', res.data.user);
             console.log(res.data.user);
             await dispatch({ type: 'ISAUTH' });
