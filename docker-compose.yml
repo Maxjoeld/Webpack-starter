@@ -1,0 +1,27 @@
+version: '3'
+services:
+  nginx:
+    # this must always be running
+    # for example if our worker crashed it's okay
+    # because it might take consume a lot of cpu cycles
+    restart: always
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./nginx
+    ports:
+      # change the first port to whatever you want 
+      - '3050:80'
+  api:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./server
+    volumes:
+      - /app/node_modules
+      - ./server:/app
+  client:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./client
+    volumes:
+      - /app/node_modules
+      - ./client:/app
