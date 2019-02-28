@@ -12,8 +12,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot --progress --colors --mode development",
     "build": "webpack",
-    "onetest": "jest",
-    "test": "jest --watchAll --colors",
+    "onetest": "jest --watchAll --colors",
+    "test": "jest",
     "test:coverage": "jest --coverage --colors",
     "webdep": "npm install @babel/plugin-proposal-class-properties -g"
   },
