@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect, Switch, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Home from './components/Home';
+import Home from './components/Home/Home';
 // import NoteList from './components/Notes/NoteList';
 // import CreateNote from './components/Notes/CreateNote';
 // import ViewNote from './components/Notes/ViewNote';
 // import EditNote from './components/Notes/EditNote';
 
-// import Login from './components/Auth/SignIn';
+import Login from './components/Auth/SignIn';
 // import SignUp from './components/Auth/SignUp';
 
 // import RequireAuth from './hoc/RequireAuth';
@@ -41,14 +41,20 @@ class App extends Component {
   // }
   render() {
     return (
-          <Router>
-            <div>
-              <p>HEYY</p>
-              <Link to='/home'>home</Link>
-              <Route path="/home" component={Home} />
-            </div>
-          </Router>
-
+      <Router>
+        <Switch>
+          <Route exact path="/home" component={Home} />
+          {/* <div className="App"> */}
+            <Route path="/login" component={Login} />
+            {/* <Route path="/signup" component={(SignUp)} />
+            <PrivateRoute exact path="/" component={(NoteList)} />
+            <PrivateRoute path="/create" component={(CreateNote)} />
+            <PrivateRoute path="/view" component={(ViewNote)} />
+            <PrivateRoute path="/edit" component={(EditNote)} />
+            <PrivateRoute path="/convo" component={(Convo)} /> */}
+          {/* </div> */}
+        </Switch>
+      </Router>
     );
   }
 }

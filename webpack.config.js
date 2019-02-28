@@ -21,13 +21,20 @@ module.exports = {
       // cs loader changes <href url(./backrdoung.jpg) to require ('image')
       // style-loader takes css being reuired and applied the styles directly to that page
       {
-        test: /\.js$/,
+        test: /\.(mjs|js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/preset-env',
+            {
+              plugins: [
+                '@babel/plugin-proposal-class-properties'
+              ]
+            }
+          ]
+        },
       },
-      // { test: /\.(js)$/, use: 'babel-loader' },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
