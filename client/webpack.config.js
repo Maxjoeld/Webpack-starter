@@ -7,7 +7,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: [
-    'webpack-dev-server/client?http://' + require("os").hostname() + ':3000/',
+    // 'webpack-dev-server/client?http://' + require("os").hostname() + ':3000/',
     './src/index.js',
   ],
   output: {
