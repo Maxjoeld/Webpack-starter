@@ -17,22 +17,22 @@ import Convo from './components/Chat/Conversation';
 
 import { isAuthenticated } from './actions';
 
-// const PrivateRoute = ({ component: Comp, ...rest }) => (
-//   <Route
-//     {...rest}
-//     render={compProps =>
-//       sessionStorage.getItem('id') ? (
-//         <Comp {...compProps} {...rest} />
-//       ) : (
-//           <Redirect
-//             to={{
-//               pathname: '/home',
-//             }}
-//           />
-//         )
-//     }
-//   />
-// );
+const PrivateRoute = ({ component: Comp, ...rest }) => (
+  <Route
+    {...rest}
+    render={compProps =>
+      sessionStorage.getItem('id') ? (
+        <Comp {...compProps} {...rest} />
+      ) : (
+          <Redirect
+            to={{
+              pathname: '/home',
+            }}
+          />
+        )
+    }
+  />
+);
 
 class App extends Component {
   // state = {}
@@ -42,18 +42,20 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Switch>
+        {/* <Switch> */}
+        <div>
           <Route path="/home" component={Home} />
           <div className="App"> 
             <Route path="/login" component={Login} />
             <Route path="/signup" component={(SignUp)} />
-            <Route exact path="/" component={(NoteList)} />
-            <Route path="/create" component={(CreateNote)} />
-            <Route path="/view" component={(ViewNote)} />
-            <Route path="/edit" component={(EditNote)} />
-            <Route path="/convo" component={(Convo)} />  
+            <PrivateRoute exact path="/" component={(NoteList)} />
+            <PrivateRoute path="/create" component={(CreateNote)} />
+            <PrivateRoute path="/view" component={(ViewNote)} />
+            <PrivateRoute path="/edit" component={(EditNote)} />
+            <PrivateRoute path="/convo" component={(Convo)} />  
           </div> 
-        </Switch>
+        </div>
+        {/* </Switch> */}
       </Router>
     );
   }

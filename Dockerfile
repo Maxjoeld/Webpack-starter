@@ -8,3 +8,4 @@ RUN npm run build
 FROM nginx
 EXPOSE 80
 COPY --from=builder /app/dist /usr/share/nginx/html
+#docker run -p 8080:80 <id> to start in browser
