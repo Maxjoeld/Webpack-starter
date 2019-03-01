@@ -9,24 +9,19 @@ module.exports = {
     path: commonPaths.outputPath,
     chunkFilename: '[name].js',
   },
+  devServer: {
+    historyApiFallback: true,
+    disableHostCheck: true,
+    host: '0.0.0.0',
+    port: 3000,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    }
+  },
   module: {
     rules: [
-      {
-        test: /\.(css|scss)$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-              camelCase: true,
-              localIdentName: '[local]___[hash:base64:5]',
-            },
-          },
-          'sass-loader',
-        ],
-      },
+      { test: /\.s?css$/, use: ["style-loader", "css-loader", "sass-loader"] },
     ],
   },
   devServer: {
