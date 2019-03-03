@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "leojj/multi-client",
+      "image": "leojj/notey-client",
       "hostname": "client",
       "essential": false,
       "memory": 128
