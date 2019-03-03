@@ -13,6 +13,7 @@ const userCreate = (req, res) => {
 };
 
 const userLogin = (req, res) => {
+  console.log('madeit')
   const { username, password } = req.body;
   if (!username || !password) {
     sendUserError('You need to provide a username and password', res);

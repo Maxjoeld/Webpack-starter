@@ -15,23 +15,23 @@ const { sendUserError, sessionAuth } = require('../utils/authenticate');
 
 module.exports = (app) => {
   // Note Routes //
-  app.route('notes/:id').get(getNotes);
-  app.route('notes/:id').delete(deleteNote);
-  app.route('notes').post(addNote);
-  app.route('notes').put(editNote);
+  app.route('api/notes/:id').get(getNotes);
+  app.route('api/notes/:id').delete(deleteNote);
+  app.route('api/notes').post(addNote);
+  app.route('api/notes').put(editNote);
   //  User Routes //
-  app.route('/register').post(userCreate);
-  app.route('/login').post(userLogin);
-  app.route('/logout').post(userLogout);
+  app.route('api/register').post(userCreate);
+  app.route('api/login').post(userLogin);
+  app.route('api/logout').post(userLogout);
 
   // Chat Routes //
-  app.route('/chat/allContacts').get(allContacts);
+  app.route('api/chat/allContacts').get(allContacts);
 
-  app.get('/chat/convo/:conversationId', sessionAuth, getConversation);
-  app.get('/chat/getConversations', getConversations);
-  app.post('/chat/reply/:conversationId', sessionAuth, sendReply);
-  app.post('/chat/new/:recipient', sessionAuth, newConversation);
-  app.get('/me/1', (req, res) => {
+  app.get('api/chat/convo/:conversationId', sessionAuth, getConversation);
+  app.get('api/chat/getConversations', getConversations);
+  app.post('api/chat/reply/:conversationId', sessionAuth, sendReply);
+  app.post('api/chat/new/:recipient', sessionAuth, newConversation);
+  app.get('api/me/1', (req, res) => {
     res.send({ user: req.user, session: req.session });
   });
 };
