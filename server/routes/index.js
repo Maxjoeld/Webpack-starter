@@ -15,10 +15,10 @@ const { sendUserError, sessionAuth } = require('../utils/authenticate');
 
 module.exports = (app) => {
   // Note Routes //
-  app.route('/:id').get(getNotes);
-  app.route('/:id').delete(deleteNote);
-  app.route('/').post(addNote);
-  app.route('/').put(editNote);
+  app.route('notes/:id').get(getNotes);
+  app.route('notes/:id').delete(deleteNote);
+  app.route('notes').post(addNote);
+  app.route('notes').put(editNote);
   //  User Routes //
   app.route('/register').post(userCreate);
   app.route('/login').post(userLogin);

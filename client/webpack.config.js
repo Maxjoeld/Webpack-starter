@@ -16,10 +16,6 @@ module.exports = {
     disableHostCheck: true,
     host: '0.0.0.0',
     port: 3000,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-    }
   },
   module: {
     rules: [

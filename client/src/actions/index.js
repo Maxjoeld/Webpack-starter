@@ -85,7 +85,8 @@ export const getNotes = () => {
     return async dispatch => {
         const id = sessionStorage.getItem('id');
         try {
-            const res = await axios.get(`/api/${id}`);
+            console.log(id)
+            const res = await axios.get(`/api/notes/${id}`);
             await dispatch({ type: GET_NOTES, payload: res.data.notes });
         } catch (error) {
             console.log({ err: 'There was an error loading your notes :(', error });
@@ -152,7 +153,7 @@ export const loginUser = (username, password, history) => {
             await history.push('/');
             await dispatch(getNotes());
             await dispatch(getUsers());
-            await dispatch(loadConvos());
+            // await dispatch(loadConvos());
         } catch (error) {
             console.log({ err: 'Hey was an error signing in ', error });
         }
@@ -184,7 +185,7 @@ export const saveUser = (username, password, firstName, lastName, history) => {
 export const createNote = inputNote => {
     return async dispatch => {
         try {
-            await axios.post(`/api`, inputNote);
+            await axios.post(`/api/notes`, inputNote);
             await dispatch(getNotes());
         } catch (error) {
             console.log({ err: 'There was an error loading your notes :(', error });
@@ -196,7 +197,7 @@ export const editNote = (editedNote, id) => {
     return async dispatch => {
         const notePackage = { editedNote, id };
         try {
-            await axios.put(`/api`, notePackage);
+            await axios.put(`/api/notes`, notePackage);
             await dispatch(getNotes());
         } catch (error) {
             console.log({ err: 'There was an error loading your notes :(', error });
@@ -207,7 +208,7 @@ export const editNote = (editedNote, id) => {
 export const deleteNote = inputId => {
     return async dispatch => {
         try {
-            await axios.delete(`/api/${inputId}`);
+            await axios.delete(`/api/notes${inputId}`);
             dispatch(getNotes());
         } catch (error) {
             console.log({ err: 'There was an error loading your notes :(', error });
