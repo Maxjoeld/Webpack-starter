@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "client",
-      "image": "leojj/notey-client",
+      "image": "leojj/notey-try",
       "hostname": "client",
       "essential": false,
       "memory": 128
