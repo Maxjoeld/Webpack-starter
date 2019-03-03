@@ -10,7 +10,7 @@ services:
       context: ./nginx
     ports:
       # change the first port to whatever you want 
-      - '3050:80'
+      - '4001:80'
   api:
     build:
       dockerfile: Dockerfile.dev
