@@ -33,7 +33,7 @@ deploy:
   bucket_name: "elasticbeanstalk-us-east-2-883721368665"
   bucket_path: notey-docker
   on:
-    branch: master
+    branch: try-cra
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
     secure: $AWS_SECRET_KEY
