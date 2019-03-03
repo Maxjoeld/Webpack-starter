@@ -10,8 +10,8 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --hot --progress --colors --mode development",
-    "build": "webpack",
+    "start": "webpack-dev-server  --hot --progress --colors --mode development",
+    "build": "webpack --config webpack.prod.js",
     "onetest": "jest --watchAll --colors",
     "test": "jest",
     "test:coverage": "jest --coverage --colors",
