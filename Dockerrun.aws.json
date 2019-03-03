@@ -10,7 +10,7 @@
     },
     {
       "name": "server",
-      "image": "leojj/multi-server",
+      "image": "leojj/notey-server",
       "hostname": "api",
       "essential": false,
       "memory": 128
